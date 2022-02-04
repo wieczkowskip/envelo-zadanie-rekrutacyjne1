@@ -1,0 +1,26 @@
+index.html:
+13: backgroundColor powinno zamienić się na background-color oraz var(bg-color) powinno zamienić się na var(--bg-color);
+17: żeby używać czcionki 'Lato' trzeba ją wcześniej zaimportować od Google, przy pomocy atrybutu <link> w sekcji <head>, poprawna użycie tej czcionki to: "font-family: 'Lato', sans-serif;"
+18: margint-bottom powinno zamienić się na margin-bottom
+29: usunąłbym aria-main, nie ma czegoś takiego jak aria-main
+30: className zamieniamy na class
+31: {heroCount} nie będzie działać w czystym JavaScript
+32: </div>> zamienić na </div>
+33: funkcja Hero.train() nie będzie działać, trzeba wywołać metodę train() osobno na wybranych elementach klasy. No chyba, że jest to funkcja statyczna, ale w przypadku train() nie miałoby to sensu.
+35: brak importu pliku javascript, poprawna linijka to: "<script src="heroes-hall-of-fame.js"></script>"
+
+
+heroes-hall-of-fame.js:
+26-27: błędne wywołanie funkcji gethero, gethero nie przyjmuje żadnych argumentów, lecz powinna, żeby dobrze działać
+29-30: do tablicy heroes próbowalibyśmy dodać puste zmienne, hero i geralt są puste, ponieważ funkcja gethero nie zwraca niczego.
+32: funkcja jest wywoływana za szybko, trzeba ją ustawić za deklaracją tej funkcji
+34-36: brak argumentu, który zawierałby nazwe heroesa, funkcja gethero tworzy obiekt o nazwie "hulk" na sztywno. Lepiej użyć argumentu funkcji.
+40: błędne wywołanie funkcji gethero, nie ma nawet takiej zmiennej jak spider.
+43: w querySelector powinno być "div" zamiast "#div". # oznacza id, a nie mamy elementu o id=div.
+45: zmienne i oraz arr w tym przypadku nie są potrzebne, można je pominąć.
+47: zamiast [name] = x użyłbym name = x.name
+49: zamiast x.#powerCount użyjemy funkcji z klasy czyli x.getCurrentPowerCount(), nie można wywołać zmiennej powerCount bezpośrednio, ponieważ jest to zmienna prywatna.
+
+Oprócz listy bugów, przesyłam naprawiony program.
+
+
